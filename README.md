@@ -1,2 +1,2 @@
 # Footclub
-Just the server part for a school projekt in software development 
+Just the server part for a school project in software development 

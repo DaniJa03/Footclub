@@ -1,0 +1,20 @@
+GET http://localhost:3000/mitarbeiter
+#########
+GET http://localhost:3000/mitarbeiter/2
+#########
+DELETE http://localhost:3000/mitarbeiter/1
+#########
+POST http://localhost:3000/mitarbeiter
+Content-Type: application/json
+
+{
+  "nachname": "Kelland",
+  "abteilung": "OP"
+}
+########
+PATCH http://localhost:3000/mitarbeiter/1
+Content-Type: application/json
+
+{
+  "abteilung": "fitness"
+}

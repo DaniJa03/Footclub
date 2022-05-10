@@ -1,0 +1,21 @@
+GET http://localhost:3000/spieler
+########
+GET http://localhost:3000/spieler/1
+########
+DELETE http://localhost:3000/spieler/2
+########
+POST http://localhost:3000/spieler
+Content-Type: application/json
+
+{
+  "vorname": "Chrystal",
+  "nachname": "Franz",
+  "trikotnummer": 44
+}
+########
+PATCH http://localhost:3000/spieler/1
+Content-Type: application/json
+
+{
+  "trikotnummer": 13
+}

@@ -1,0 +1,21 @@
+GET http://localhost:3000/trainer
+################
+GET http://localhost:3000/trainer/1
+################
+DELETE http://localhost:3000/trainer/16
+################
+POST http://localhost:3000/trainer
+Content-Type: application/json
+
+{
+    "vorname": "Sheilakathryn",
+    "nachname": "Waddoups",
+    "trainerrolle": "Ausdauertrainer"
+}
+################
+PATCH http://localhost:3000/trainer/2
+Content-Type: application/json
+
+{
+    "trainerrolle": "Cheftrainer"
+}

@@ -10,7 +10,6 @@ export const useSpielerStore = defineStore('Storespieler', {
       try {
         const { data } = await axios.get('http://localhost:3000/spieler');
         this.spieler = data;
-        console.log(data);
       } catch (error) {
         console.log(error);
       }

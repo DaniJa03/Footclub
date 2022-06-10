@@ -24,6 +24,11 @@ const router = createRouter({
       name: 'medizinpersonal',
       component: () => import('../views/MedizinpersonalView.vue'),
     },
+    {
+      path: '/:catchAll(.*)',
+      name: 'NotFound',
+      component: () => import('../views/NotFoundView.vue'),
+    },
   ],
 });
 

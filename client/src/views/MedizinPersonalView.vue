@@ -1,6 +1,6 @@
 <template>
   <div>
-    <MedizinpersonalModify @addMitarbeiter="addMitarbeiter" :sub="sub" @update="updateMit"></MedizinpersonalModify>
+    <MedizinpersonalModify @addMitarbeiter="addMitarbeiter" :sub="sub" @updateMit="updateMit"></MedizinpersonalModify>
     <MedizinpersonalTable :subs="subs" @deleteMitarbeiter="deleteMitarbeiter" @copy="sub = $event"></MedizinpersonalTable>
   </div>
 </template>
@@ -31,7 +31,7 @@ const updateMit = async (payload) => {
         nachname: payload.nachname,
         abteilung: payload.abteilung
     };
-    await axios.patch(`http://localhost:3000/mitarbeiter/${payload.spielerpassid}`, updateMitarbeiter);
+    await axios.patch(`http://localhost:3000/mitarbeiter/${payload.mitarbeiterid}`, updateMitarbeiter);
     getMitarbeiter();
 };
 

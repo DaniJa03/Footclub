@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TrainerModify @addTrainer="addTrainer" :sub="sub" @updateTrainer="updateTrainer"></TrainerModify>
+    <TrainerModify @addTrainer="addTrainer" :sub="sub" @updateTr="updateTr"></TrainerModify>
     <TrainerTable :subs="subs" @deleteTrainer="deleteTrainer" @copy="sub = $event"></TrainerTable>
   </div>
 </template>
@@ -25,7 +25,7 @@ const addTrainer = async (payload) => {
   getTrainer();
 };
 
-const updateTrainer = async (payload) => {
+const updateTr = async (payload) => {
   const updateTrainer = {
     trainerid: payload.trainerid,
     nachname: payload.nachname,

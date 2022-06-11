@@ -1,6 +1,6 @@
 <template>
     <div>
-        <SpielerModify @add="add" :sub="sub" @update="updateMe"></SpielerModify>
+        <SpielerModify @addSpieler="addSpieler" :sub="sub" @update="updateMe"></SpielerModify>
         <SpielerTable :subs="subs" @del="del" @copy="sub = $event"></SpielerTable>
     </div>
 </template>
@@ -20,8 +20,8 @@ const getSpieler = async () => {
 };
 onMounted(() => getSpieler());
 
-const add = async (payload) => {
-    await axios.post('http://localhost:3000/spieler', payload);
+const addSpieler = async (payload) => {
+    await axios.post(`http://localhost:3000/spieler`, payload);
     getSpieler();
 };
 

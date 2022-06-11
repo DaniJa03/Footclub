@@ -9,18 +9,12 @@
       </p>
       <div>
         <label>Spielerpassid</label>
-        <input
-          type="text"
-          name="floating_company"
-          id="floating_company"
-          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-          placeholder=" "
-          required
-        />
+        <p>{{ sub.spielerpassid }}</p>
       </div>
       <div>
         <label>Nachname</label>
         <input
+          v-model="sub.nachname"
           type="text"
           name="floating_company"
           id="floating_company"
@@ -32,6 +26,7 @@
       <div>
         <label>Vorname</label>
         <input
+          v-model="sub.vorname"
           type="text"
           name="floating_company"
           id="floating_company"
@@ -43,6 +38,7 @@
       <div>
         <label>Trikotnummer</label>
         <input
+          v-model="sub.trikotnummer"
           type="text"
           name="floating_company"
           id="floating_company"
@@ -71,11 +67,11 @@
       </div>
       <div>
         <button
-          :disabled="spielerAddDisabled"
           @click="emit('addSpieler', sub)"
-          class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 inline-flex sm:ml-3 mt-4 sm:mt-0 items-start justify-start px-6 py-3 bg-indigo-700 hover:bg-indigo-600 focus:outline-none rounded"
+          type="button"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
         >
-          <p class="text-sm font-medium leading-none text-white">Neuer Spieler</p>
+          Neuer Spieler
         </button>
       </div>
     </div>
@@ -107,5 +103,5 @@ const spielerAddDisabled = () => {
   return spielerpassid || !(nachname && vorname && trikotnummer);
 };
 
-const emit = defineEmits(['add', 'updateMe']);
+const emit = defineEmits(['addSpieler', 'updateMe']);
 </script>

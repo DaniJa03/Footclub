@@ -1,6 +1,6 @@
 <template>
   <div>
-    <MedizinpersonalModify @add="addMitarbeiter" :sub="sub" @update="updateMit"></MedizinpersonalModify>
+    <MedizinpersonalModify @addMitarbeiter="addMitarbeiter" :sub="sub" @update="updateMit"></MedizinpersonalModify>
     <MedizinpersonalTable :subs="subs" @deleteMitarbeiter="deleteMitarbeiter" @copy="sub = $event"></MedizinpersonalTable>
   </div>
 </template>
@@ -21,7 +21,7 @@ const getMitarbeiter = async () => {
 onMounted(() => getMitarbeiter());
 
 const addMitarbeiter = async (payload) => {
-    await axios.post(`http://localhost:3000/mitarbeitaer`, payload);
+    await axios.post(`http://localhost:3000/mitarbeiter`, payload);
     getMitarbeiter();
 };
 
@@ -37,6 +37,6 @@ const updateMit = async (payload) => {
 
 const deleteMitarbeiter = async (payload) => {
     await axios.delete(`http://localhost:3000/mitarbeiter/${payload.mitarbeiterid}`);
-    getSpieler();
+    getMitarbeiter();
 }
 </script>

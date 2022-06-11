@@ -4,15 +4,18 @@ import axios from 'axios';
 export const useSpielerStore = defineStore('Storespieler', {
   state: () => ({
     spieler: [],
+    trainer: [],
+    medizinpersonal: [],
   }),
   actions: {
-    async getSpieler() {
-      try {
-        const { data } = await axios.get('http://localhost:3000/spieler');
-        this.spieler = data;
-      } catch (error) {
-        console.log(error);
-      }
+    getSpieler(daten) {
+      this.spieler = daten;
     },
+    getTrainer(daten) {
+      this.trainer = daten;
+    },
+    getMedizinPersonal(daten) {
+      this.medizinpersonal = daten;
+    }
   },
 });

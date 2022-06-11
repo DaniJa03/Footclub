@@ -34,24 +34,24 @@
             </thead>
             <tbody class="w-full">
               <tr
+                v-for="(b, index) in trainerArray"
+                :key="index"
                 tabindex="0"
                 class="focus:outline-none h-20 text-sm leading-none text-gray-800 bg-white hover:bg-gray-100 border-b border-t border-gray-100"
               >
                 <td class="pl-4 cursor-pointer">
                   <div class="flex items-center">
-                      <p class="font-medium">UX Design &amp; Visual Strategy</p>
+                      <p class="font-medium">{{b.trainerid}}</p>
                   </div>
                 </td>
                 <td class="pl-12">
-                  <p class="text-sm font-medium leading-none text-gray-800">72%</p>
+                  <p class="text-sm font-medium leading-none text-gray-800">{{b.nachname}}</p>
                 </td>
                 <td class="pl-12">
-                  <p class="font-medium">32/47</p>
-                  <p class="text-xs leading-3 text-gray-600 mt-2">5 tasks pending</p>
+                  <p class="text-sm font-medium leading-none text-gray-800">{{b.vorname}}</p>
                 </td>
                 <td class="pl-20">
-                  <p class="font-medium">$13,000</p>
-                  <p class="text-xs leading-3 text-gray-600 mt-2">$4,200 left</p>
+                  <p class="text-sm font-medium leading-none text-gray-800">{{b.trainerrolle}}</p>
                 </td>
                 <td class="px-7 2xl:px-0">
                   <button
@@ -117,16 +117,17 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { onMounted, ref, computed } from 'vue';
+import axios from 'axios';
+import { useSpielerStore } from '../stores/spielerStore.js';
 
-export default {
-  name: 'component',
-  data() {
-    return {
-      show: null,
-    };
-  },
-  methods: {},
-  mounted() {},
-};
+const spielerStore = useSpielerStore();
+
+let trainerArray = ref([]);
+
+onMounted(async () => {
+  const { data } = await axios.get('http://localhost:3000/trainer');
+  trainerArray.value = data;
+})
 </script>

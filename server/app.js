@@ -6,7 +6,8 @@ import path from 'path';
 import spielerRoutes from './routes/spieler.js';
 import trainerRoutes from './routes/trainer.js';
 import medizinRoutes from './routes/medizinPersonal.js';
-import {errorHandler, notFoundHandler} from './middleware/errorHandler.js';
+import { errorHandler, notFoundHandler } from './middleware/errorHandler.js';
+import cors from 'cors';
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ const app = express();
 
 app.use(morgan('dev'));
 app.use(helmet());
+app.use(cors());
 
 app.use(express.static(path.join(dirname, '/public')));
 

@@ -24,10 +24,11 @@
               <tr
                 v-for="sub of subs"
                 :key="sub.spielerpassid"
+                @click="emit('copy', sub)"
                 tabindex="0"
                 class="focus:outline-none h-20 text-sm leading-none text-gray-800 bg-white hover:bg-gray-100 border-b border-t border-gray-100"
               >
-                <td @click="emit('copy', sub)" class="pl-4 cursor-pointer">
+                <td class="pl-4 cursor-pointer">
                   <div class="flex items-center">
                     <p class="font-medium">{{ sub.mitarbeiterid }}</p>
                   </div>

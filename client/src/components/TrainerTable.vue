@@ -16,8 +16,8 @@
                 class="focus:outline-none h-16 w-full text-sm leading-none text-gray-800"
               >
                 <th class="font-normal text-left pl-4">Trainerid</th>
-                <th class="font-normal text-left pl-12">Vorname</th>
                 <th class="font-normal text-left pl-12">Nachname</th>
+                <th class="font-normal text-left pl-12">Vorname</th>
                 <th class="font-normal text-left pl-20">Trainerrolle</th>
               </tr>
             </thead>
@@ -25,19 +25,20 @@
               <tr
                 v-for="sub of subs"
                 :key="sub.trainerid"
+                @click="emit('copy', sub)"
                 tabindex="0"
                 class="focus:outline-none h-20 text-sm leading-none text-gray-800 bg-white hover:bg-gray-100 border-b border-t border-gray-100"
               >
-                <td @click="emit('copy', sub)" class="pl-4 cursor-pointer">
+                <td class="pl-4 cursor-pointer">
                   <div class="flex items-center">
                     <p class="font-medium">{{ sub.trainerid }}</p>
                   </div>
                 </td>
                 <td class="pl-12">
-                  <p class="text-sm font-medium leading-none text-gray-800">{{ sub.vorname }}</p>
+                  <p class="font-medium">{{ sub.nachname }}</p>
                 </td>
                 <td class="pl-12">
-                  <p class="font-medium">{{ sub.nachname }}</p>
+                  <p class="text-sm font-medium leading-none text-gray-800">{{ sub.vorname }}</p>
                 </td>
                 <td class="pl-20">
                   <p class="font-medium">{{ sub.trainerrolle }}</p>

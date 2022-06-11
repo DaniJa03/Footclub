@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TrainerModify @addTrainer="addTrainer" :sub="sub" @update="updateTr"></TrainerModify>
+    <TrainerModify @addTrainer="addTrainer" :sub="sub" @updateTrainer="updateTrainer"></TrainerModify>
     <TrainerTable :subs="subs" @deleteTrainer="deleteTrainer" @copy="sub = $event"></TrainerTable>
   </div>
 </template>
@@ -25,11 +25,11 @@ const addTrainer = async (payload) => {
   getTrainer();
 };
 
-const updateTr = async (payload) => {
+const updateTrainer = async (payload) => {
   const updateTrainer = {
     trainerid: payload.trainerid,
-    vorname: payload.vorname,
     nachname: payload.nachname,
+    vorname: payload.vorname,
     trainerrolle: payload.trainerrolle,
   };
   await axios.patch(`http://localhost:3000/trainer/${payload.trainerid}`, updateTrainer);

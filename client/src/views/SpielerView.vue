@@ -1,6 +1,6 @@
 <template>
   <div>
-    <SpielerModify @add="add" :sub="sub" @update="updateMe"></SpielerModify>
+    <SpielerModify @add="add" :sub="sub" @updateSpieler="updateSpieler"></SpielerModify>
     <SpielerTable :subs="subs" @del="del" @copy="sub = $event"></SpielerTable>
   </div>
 </template>
@@ -25,7 +25,7 @@ const add = async (payload) => {
   getSpieler();
 };
 
-const updateMe = async (payload) => {
+const updateSpieler = async (payload) => {
   const updateSpieler = {
     spielerpassid: payload.spielerpassid,
     vorname: payload.vorname,

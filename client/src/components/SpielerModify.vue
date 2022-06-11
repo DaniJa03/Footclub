@@ -17,7 +17,7 @@
           v-model="sub.nachname"
           type="text"
           class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-          placeholder=" "
+          placeholder=""
           required
         />
       </div>
@@ -27,7 +27,7 @@
           v-model="sub.vorname"
           type="text"
           class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-          placeholder=" "
+          placeholder=""
           required
         />
       </div>
@@ -52,7 +52,7 @@
       </div>
       <div>
         <button
-          @click="emit('updateMe', sub)"
+          @click="emit('updateSpieler', sub)"
           type="button"
           class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
         >
@@ -92,5 +92,5 @@ const clear = () => {
   sub.value.trikotnummer = '';
 };
 
-const emit = defineEmits(['add', 'updateMe']);
+const emit = defineEmits(['add', 'updateSpieler']);
 </script>

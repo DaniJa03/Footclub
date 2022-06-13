@@ -30,7 +30,6 @@
                 <div class="pl-2">
                   <img
                     src="https://tuk-cdn.s3.amazonaws.com/can-uploader/alternating_description_with_cards-svg1.svg"
-                    alt="arrow"
                   />
                 </div>
               </button>
@@ -40,7 +39,6 @@
             <img
               class="absolute w-full h-full inset-0 object-cover object-center rounded-md"
               src="https://www.realmadrid.com/img/horizontal_620px/ciudad-deportiva-valdebebas_0039_20190913113043.jpg"
-              alt="A girl enjoying in sunlight"
               role="img"
             />
           </div>
@@ -79,7 +77,6 @@
                 <div class="pl-2">
                   <img
                     src="https://tuk-cdn.s3.amazonaws.com/can-uploader/alternating_description_with_cards-svg1.svg"
-                    alt="arrow"
                   />
                 </div>
               </button>
@@ -89,7 +86,6 @@
             <img
               class="absolute w-full h-full inset-0 object-cover object-center rounded-md"
               src="https://www.straden.gv.at/images/content/LEBENSKRAFT/Sport_Freizeiteinrichtungen/Fussball/Straden/SU-Straden_02.jpg"
-              alt="A group of three having a meeting"
               role="img"
             />
           </div>
